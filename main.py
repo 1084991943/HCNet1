@@ -20,20 +20,13 @@ from plant_dataset import load_train_val_data
 
 
 def parse_option():
-    parser = argparse.ArgumentParser('Progressive Region Enhancement Network(PRENet) for training and testing')
+    parser = argparse.ArgumentParser('Hierarchical complementary networks (HCENet) for training and testing')
     parser.add_argument('--batchsize', default=32, type=int, help="batch size for single GPU")
-    parser.add_argument('--dataset', type=str, default='food101')
+    parser.add_argument('--dataset', type=str, default='IP102,AI_C_2018')
     parser.add_argument('--image_path', type=str, default=r"D:\dataset\IP102\IP102_txt/", help='path to dataset')
     parser.add_argument("--train_path", type=str, default=r"D:\dataset\IP102/train.txt", help='path to training list')
     parser.add_argument("--test_path", type=str, default=r"D:\dataset\IP102/test.txt",
                         help='path to testing list')
-    parser.add_argument('--weight_path', default=r"C:\Users\ljw\PycharmProjects\pythonProject\fine-grained image recognition\Large Scale Visual Food Recognition\prenet-master\prenet\food2k_resnet50_0.0001.pth", help='path to the pretrained model')
-    parser.add_argument('--use_checkpoint', action='store_true', default=True,
-                        help="whether to use gradient checkpointing to save memory")
-    parser.add_argument('--checkpoint', type=str, default=r"C:\Users\ljw\PycharmProjects\pythonProject\fine-grained image recognition\Large Scale Visual Food Recognition\prenet-master\model_448_from2k\model.pth",
-                        help="the path to checkpoint")
-    parser.add_argument('--output_dir', default='output', type=str, metavar='PATH',
-                        help='root of output folder, the full path is <output>/<model_name>/<tag> (default: output)')
     parser.add_argument("--learning_rate", default=1e-4, type=float,
                         help="The initial learning rate for SGD.")
     parser.add_argument("--epoch", default=150, type=int,
