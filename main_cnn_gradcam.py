@@ -25,7 +25,7 @@ def main():
 
     save_dir = r'C:\Users\ljw\Desktop\CEA\cam_map\ConvNeXt\F3'
     # load image
-    dir_path = R'D:\dataset\IP102\IP102\train'
+    dir_path = R'D:\dataset\IP102\IP102\test'
     dir_list = os.listdir(dir_path)
 
 
